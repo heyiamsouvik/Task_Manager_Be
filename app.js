@@ -7,10 +7,13 @@ const userApis = require("./routes/user.routes.js");
 const taskApis = require("./routes/task.routes.js");
 
 require('dotenv').config();
-// const FE_LINK = process.env.FE_WEBSITE_LINK;
-// console.log(`${process.env.FE_WEBSITE_LINK}`);
+const FE_LINK = process.env.FE_WEBSITE_LINK;
+console.log(`${process.env.FE_WEBSITE_LINK}`);
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin:FE_LINK ,
+  credentials: true 
+}));
 app.use(express.json());
 app.use(cookieParser());
 
