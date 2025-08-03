@@ -6,16 +6,11 @@ const connectDB = require("./config/db.js");
 const userApis = require("./routes/user.routes.js");
 const taskApis = require("./routes/task.routes.js");
 
-dotenv.config();
-const FE_LINK = process.env.FE_WEBSITE_LINK || "http://localhost:5173";
-console.log(process.env.FE_WEBSITE_LINK);
+require('dotenv').config();
+// const FE_LINK = process.env.FE_WEBSITE_LINK;
+// console.log(`${process.env.FE_WEBSITE_LINK}`);
 const app = express();
-app.use(
-  cors({
-    origin:FE_LINK,
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
