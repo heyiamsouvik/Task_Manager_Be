@@ -8,6 +8,7 @@ const taskApis = require("./routes/task.routes.js");
 
 dotenv.config();
 const FE_LINK = process.env.FE_WEBSITE_LINK || "http://localhost:5173";
+console.log(process.env.FE_WEBSITE_LINK);
 const app = express();
 app.use(
   cors({
