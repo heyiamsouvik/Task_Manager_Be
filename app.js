@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 app.use(
   cors({
-    origin: process.env.CLIENT_URL.FE_WEBSITE_LINK,
+    origin: process.env.FE_WEBSITE_LINK,
     credentials: true,
   })
 );
