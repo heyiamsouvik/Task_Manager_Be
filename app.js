@@ -36,8 +36,8 @@ app.get("/",(req,res)=>{
 app.use("/api/v1", userApis);
 app.use("/api/v1", taskApis);
 
-// app.listen(PORT, () => {
-//   console.log(`server started on port ${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
+});
 
-module.exports = app;
+
