@@ -7,11 +7,11 @@ const userApis = require("./routes/user.routes.js");
 const taskApis = require("./routes/task.routes.js");
 
 dotenv.config();
-
+const FE_LINK = process.env.FE_WEBSITE_LINK || "http://localhost:5173";
 const app = express();
 app.use(
   cors({
-    origin: process.env.FE_WEBSITE_LINK,
+    origin:FE_LINK,
     credentials: true,
   })
 );
