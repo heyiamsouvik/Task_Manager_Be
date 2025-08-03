@@ -24,7 +24,13 @@ PORT = process.env.PORT;
 connectDB();
 
 //Routes
-
+app.get("/",(req,res)=>{
+  res.json(
+    {
+    message: "hello world"
+  }
+  )
+})
 //API
 app.use("/api/v1", userApis);
 app.use("/api/v1", taskApis);
