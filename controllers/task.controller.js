@@ -2,6 +2,7 @@ const Task = require("../models/task.model");
 const User = require("../models/user.model");
 
 const addTask = async (req, res) => {
+  console.log(`addtask:${process.env.FE_WEBSITE_LINK}`);
   try {
     const { title, description, priority, status } = req.body;
     const { user } = req;
@@ -42,6 +43,7 @@ const addTask = async (req, res) => {
 };
 
 const editTask = async (req, res) => {
+  console.log(`edittask:${process.env.FE_WEBSITE_LINK}`);
   try {
     const { id } = req.params;
     const { title, description, priority, status } = req.body;
@@ -80,6 +82,7 @@ const editTask = async (req, res) => {
 };
 
 const getTask = async (req, res) => {
+  console.log(`gettaskbyid:${process.env.FE_WEBSITE_LINK}`);
   try {
     const { id } = req.params;
     const taskdetails = await Task.findById(id);
@@ -94,6 +97,7 @@ const getTask = async (req, res) => {
 };
 
 const deleteTask = async (req, res) => {
+  console.log(`deletetask:${process.env.FE_WEBSITE_LINK}`);
   try {
     const { id } = req.params;
     await Task.findByIdAndDelete(id);
@@ -111,6 +115,7 @@ const deleteTask = async (req, res) => {
 };
 
 const userDetails = async (req, res) => {
+  console.log(`alltask:${process.env.FE_WEBSITE_LINK}`);
   try {
     const user = req.user;
     const getDetails = await User.findById(user._id)
@@ -141,7 +146,6 @@ const userDetails = async (req, res) => {
       });
     }
   } catch (error) {
-    console.error("Login error:", error);
     return res.status(500).json({
       success: false,
       message: "Internal server error.",
