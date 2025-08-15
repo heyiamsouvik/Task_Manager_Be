@@ -71,7 +71,7 @@ Task
 
 ---
 
-📡 API Documentation
+## 📡 API Documentation
 Auth Routes
 
 POST /register – Register a new user
