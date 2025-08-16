@@ -70,70 +70,20 @@ Task
 
 
 ---
+## 🔐 Auth Routes
+POST /register
 
-## 📡 API Documentation
-Auth Routes
+POST /login
 
-POST /register – Register a new user
+POST /logout
 
-Auth Required: No
+## 📝 Task Routes
+POST /addtask
 
-Request Body:
+PUT /editask/:id
 
-{ "username": "JohnDoe", "email": "john@example.com", "password": "secret123" }
+GET /gettask/:id
 
+DELETE /deletetask/:id
 
-POST /login – Login and receive authentication token
-
-Auth Required: No
-
-Request Body:
-
-{ "email": "john@example.com", "password": "secret123" }
-
-
-POST /logout – Logout the current user
-
-Auth Required: Yes
-
-Request Body: None
-
-Task Routes
-
-POST /addtask – Add a new task
-
-Auth Required: Yes
-
-Request Body:
-
-{ "title": "Finish Project", "description": "Complete backend API docs", "priority": "high", "status": "inProgress" }
-
-
-PUT /editask/:id – Edit a task by its ID
-
-Auth Required: Yes
-
-URL Parameter: id – Task ID
-
-Request Body:
-
-{ "title": "Updated Title", "description": "Updated description", "priority": "medium", "status": "completed" }
-
-
-GET /gettask/:id – Get task details by ID
-
-Auth Required: Yes
-
-URL Parameter: id – Task ID
-
-DELETE /deletetask/:id – Delete a task by ID
-
-Auth Required: Yes
-
-URL Parameter: id – Task ID
-
-GET /allnotes – Retrieve all tasks for the authenticated user
-
-Auth Required: Yes
-
-Request Body: None
+GET /allnotes

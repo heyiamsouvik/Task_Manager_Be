@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const { registerSchema, loginSchema } = require("../validations/validate.js");
 
 const registerUser = async (req, res) => {
-  console.log(`register:${process.env.FE_WEBSITE_LINK}`);
+  
   try {
     const result = registerSchema.safeParse(req.body);
     if (!result.success) {
@@ -45,7 +45,7 @@ const registerUser = async (req, res) => {
 };
 
 const loginUser = async (req, res) => {
-  console.log(`login:${process.env.FE_WEBSITE_LINK}`);
+
   const result = loginSchema.safeParse(req.body);
   if (!result.success) {
     return res.status(400).json({
@@ -99,7 +99,7 @@ const loginUser = async (req, res) => {
 };
 
 const logoutUser = async (req, res) => {
-   console.log(`logout:${process.env.FE_WEBSITE_LINK}`);
+   
   try {
     res.clearCookie("taskBuddyUserToken", {
       httpOnly: true,
