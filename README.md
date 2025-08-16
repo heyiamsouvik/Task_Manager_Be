@@ -31,59 +31,48 @@ It provides APIs for **user authentication** and **task management**, with prope
 
 1. **Clone the Repository**
 
-git clone https://github.com/heyiamsouvik/Task_Manager_Be.git
-cd Task_Manager_Be
+    git clone https://github.com/heyiamsouvik/Task_Manager_Be.git
+    cd Task_Manager_Be
 
 2. **Install Dependencies**
 
-npm install
+    npm install
 
 3. **Setup Environment Variables (.env)**
 
-PORT=4000
-MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/taskdb
-JWT_SECRET=your_jwt_secret
-FE_WEBSITE_LINK=http://localhost:3000
-NODE_ENV=development
+    - PORT=4000
+
+    - MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/taskdb
+
+    - JWT_SECRET=your_jwt_secret
+
+    - FE_WEBSITE_LINK=http://localhost:3000
+
+    - NODE_ENV=development
 
 4. **Run the Server**
 
-npm start
+    - npm start
 
 ---
-## 🗄 Database Schema
-User Schema
-User
-│
-├── username   : String (required, trimmed)
-├── email      : String (required, unique, lowercase)
-├── password   : String (hashed, required)
-└── tasks[]    : Array of Task IDs (ref: Task)
 
-Task Schema
-Task
-│
-├── title       : String (required, trimmed)
-├── description : String (required, trimmed)
-├── priority    : String (enum: low, medium, high) default: low
-└── status      : String (enum: yetToStart, inProgress, completed) default: yetToStart
 
 
 ---
 ## 🔐 Auth Routes
-POST /register
+    POST /register
 
-POST /login
+    POST /login
 
-POST /logout
+    POST /logout
 
 ## 📝 Task Routes
-POST /addtask
+    POST /addtask
 
-PUT /editask/:id
+    PUT /editask/:id
 
-GET /gettask/:id
+    GET /gettask/:id
 
-DELETE /deletetask/:id
+    DELETE /deletetask/:id
 
-GET /allnotes
+    GET /allnotes
